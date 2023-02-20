@@ -22,15 +22,14 @@ Various settings can affect the operation of the server:
                    Function.aliases may be a list of alternative spellings
 """
 
-import SocketServer
+import curses
+import curses.ascii
+import logging
 import socket
-import struct
+import socketserver as SocketServer
 import sys
 import traceback
-import curses.ascii
-import curses.has_key
-import curses
-import logging
+
 #if not hasattr(socket, 'SHUT_RDWR'):
 #    socket.SHUT_RDWR = 2
 

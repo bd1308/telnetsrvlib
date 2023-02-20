@@ -1,12 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # Telnet handler concrete class using green threads with eventlet
 
 import eventlet
 
 from telnetsrvlib import TelnetHandlerBase, command
 
+
 class TelnetHandler(TelnetHandlerBase):
     "A telnet server handler using Gevent"
+
     def __init__(self, request, client_address, server):
         # Create a green queue for input handling
         self.cookedq = eventlet.queue.Queue()
@@ -28,7 +30,6 @@ class TelnetHandler(TelnetHandlerBase):
         TelnetHandlerBase.finish(self)
         # Ensure the greenlet is dead
         self.greenlet_ic.kill()
-
 
     # -- Green input handling functions --
 
@@ -55,4 +56,3 @@ class TelnetHandler(TelnetHandlerBase):
                 self.cookedq.put(v)
         else:
             self.cookedq.put(char)
-
