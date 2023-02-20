@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # Telnet handler concrete class using true threads.
 
+import select
 import threading
 import time
-import select
 
-from telnetsrvlib import TelnetHandlerBase, command
+from telnetsrvlib3 import TelnetHandlerBase
 
 
 class TelnetHandler(TelnetHandlerBase):

@@ -3,7 +3,7 @@
 
 import eventlet
 
-from telnetsrvlib import TelnetHandlerBase, command
+from telnetsrvlib3 import TelnetHandlerBase, command
 
 
 class TelnetHandler(TelnetHandlerBase):

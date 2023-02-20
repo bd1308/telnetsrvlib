@@ -576,7 +576,7 @@ class TelnetHandlerBase(SocketServer.BaseRequestHandler):
         elif cmd == SB:
             pass
         else:
-            log.debug("Unhandled option: %s %s" % (cmdtxt, opttxt, ))
+            log.debug("Unhandled option: %s %s" % (cmd, opt, ))
 
     def sendcommand(self, cmd, opt=None):
         "Send a telnet command (IAC)"

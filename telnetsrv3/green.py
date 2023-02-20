@@ -4,7 +4,7 @@
 import gevent
 import gevent.queue
 
-from telnetsrvlib import TelnetHandlerBase
+from telnetsrvlib3 import TelnetHandlerBase
 
 
 class TelnetHandler(TelnetHandlerBase):
